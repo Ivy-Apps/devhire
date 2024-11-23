@@ -69,7 +69,7 @@ private fun GridCell(color: Color, row: Int, column: Int, width: Int? = null, he
 @Page
 @Composable
 fun HomePage() {
-    PageLayout("Home") {
+    PageLayout("DevHire: Improve your hiring odds!") {
         Row(HeroContainerStyle.toModifier()) {
             Box {
                 val sitePalette = ColorMode.current.toSitePalette()
