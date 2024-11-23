@@ -1,7 +1,6 @@
 package devhire.io
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.*
 import com.varabyte.kobweb.compose.css.ScrollBehavior
 import com.varabyte.kobweb.compose.ui.modifiers.minHeight
 import com.varabyte.kobweb.compose.ui.modifiers.scrollBehavior
@@ -13,6 +12,8 @@ import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.style.common.SmoothColorStyle
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
+import devhire.io.di.AppModule
+import ivy.di.Di
 import kotlinx.browser.localStorage
 import org.jetbrains.compose.web.css.vh
 
@@ -37,7 +38,21 @@ fun AppEntry(content: @Composable () -> Unit) {
                 .minHeight(100.vh)
                 .scrollBehavior(ScrollBehavior.Smooth)
         ) {
-            content()
+            DiContainer {
+                content()
+            }
         }
+    }
+}
+
+@Composable
+private fun DiContainer(content: @Composable () -> Unit) {
+    var initialized by remember { mutableStateOf(false) }
+    LaunchedEffect(Unit) {
+        Di.init(AppModule)
+        initialized = true
+    }
+    if (initialized) {
+        content()
     }
 }
