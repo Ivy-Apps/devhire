@@ -23,16 +23,16 @@ import com.varabyte.kobweb.silk.style.toAttrs
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.ColorSchemes
+import devhire.io.HeadlineTextStyle
+import devhire.io.SubheadlineTextStyle
+import devhire.io.components.layouts.PageLayout
+import devhire.io.toSitePalette
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.vh
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
-import devhire.io.HeadlineTextStyle
-import devhire.io.SubheadlineTextStyle
-import devhire.io.components.layouts.PageLayout
-import devhire.io.toSitePalette
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
 val HeroContainerStyle = CssStyle {
@@ -75,6 +75,14 @@ fun HomePage() {
                 val sitePalette = ColorMode.current.toSitePalette()
 
                 Column(Modifier.gap(2.cssRem)) {
+                    val ctx = rememberPageContext()
+                    Button(
+                        onClick = {
+                            ctx.router.navigateTo("/developer-login")
+                        }
+                    ) {
+                        Text("I am developer")
+                    }
                     Div(HeadlineTextStyle.toAttrs()) {
                         SpanText(
                             "Use this template as your starting point for ", Modifier.color(
@@ -99,7 +107,6 @@ fun HomePage() {
                         SpanText(" page for more information.")
                     }
 
-                    val ctx = rememberPageContext()
                     Button(onClick = {
                         // Change this click handler with your call-to-action behavior
                         // here. Link to an order page? Open a calendar UI? Play a movie?
@@ -116,7 +123,7 @@ fun HomePage() {
                 .displayIfAtLeast(Breakpoint.MD)
                 .grid {
                     rows { repeat(3) { size(1.fr) } }
-                    columns { repeat(5) {size(1.fr) } }
+                    columns { repeat(5) { size(1.fr) } }
                 }
                 .toAttrs()
             ) {
