@@ -10,7 +10,6 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
 import com.varabyte.kobweb.silk.components.icons.MoonIcon
@@ -46,8 +45,6 @@ private fun NavLink(path: String, text: String) {
 
 @Composable
 private fun MenuItems() {
-    NavLink("/", "Home")
-    NavLink("/about", "About")
 }
 
 @Composable
@@ -100,15 +97,7 @@ enum class SideMenuState {
 @Composable
 fun NavHeader() {
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        Link("/") {
-            Image(
-                modifier = Modifier
-                    .height(2.cssRem)
-                    .display(DisplayStyle.Block),
-                src = "/devhire-logo.png",
-                description = "DevHire home",
-            )
-        }
+        NavLink(path = "/", text = "DevHire")
 
         Spacer()
 
