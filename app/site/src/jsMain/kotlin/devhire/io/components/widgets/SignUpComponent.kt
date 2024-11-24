@@ -14,6 +14,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.forms.Button
+import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.theme.colors.ColorScheme
 import com.varabyte.kobweb.silk.theme.colors.ColorSchemes
 import devhire.io.pages.Routes
@@ -97,6 +98,7 @@ private fun CtaButton(
         Button(
             modifier = Modifier.minWidth(MinButtonWidth),
             colorScheme = colorScheme,
+            size = ButtonSize.LG,
             onClick = {
                 ctx.router.navigateTo(route)
             }
