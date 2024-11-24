@@ -30,8 +30,8 @@ fun Footer(modifier: Modifier = Modifier) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            NavLink(text = "Terms of Use", path = "/tc")
-            NavLink(text = "Privacy Policy", path = "/tc")
+            NavLink(text = "Terms of Use", path = "/terms")
+            NavLink(text = "Privacy Policy", path = "/privacy")
             Div(Modifier.padding(top = 1.cssRem).toAttrs()) {
                 Text("Copyright © 2024 Ivy Apps")
             }
