@@ -5,11 +5,10 @@ import com.varabyte.kobweb.core.Page
 import devhire.io.components.layouts.PageLayout
 import org.jetbrains.compose.web.dom.Text
 
-
-@Page("/developer-login")
+@Page(routeOverride = "/hr-login")
 @Composable
-fun DeveloperLoginPage() {
-    PageLayout("Developer") {
-        Text("Hello, Developer!")
+fun HRLoginPage() {
+    PageLayout("HR: Fill a job") {
+        Text("Hello HR!")
     }
 }
