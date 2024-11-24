@@ -48,7 +48,7 @@ fun HomePage() {
                 Br()
                 Text("We connect developers with HR professionals to close this gap.")
             }
-            SignUpComponent()
+            SignUpComponent(headerText = "Count me in?")
         }
     }
 }

@@ -25,7 +25,9 @@ import org.jetbrains.compose.web.dom.Text
 private val MinButtonWidth = 200.px
 
 @Composable
-fun SignUpComponent() {
+fun SignUpComponent(
+    headerText: String,
+) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -36,7 +38,7 @@ fun SignUpComponent() {
                 .padding(bottom = 1.cssRem)
                 .toAttrs()
         ) {
-            Text("Count me in?")
+            Text(headerText)
         }
         Row(
             verticalAlignment = Alignment.CenterVertically
