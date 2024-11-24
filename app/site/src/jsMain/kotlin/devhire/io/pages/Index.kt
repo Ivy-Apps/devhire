@@ -1,8 +1,12 @@
 package devhire.io.pages
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
+import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
 import devhire.io.components.layouts.PageLayout
 import org.jetbrains.compose.web.dom.H1
@@ -20,11 +24,7 @@ fun HomePage() {
             H1 {
                 Text("Improve you hiring odds!")
             }
-            H2(
-                attrs = {
-                    // TODO: TextAlign.Center, center the text horizontally
-                }
-            ) {
+            H2(Modifier.textAlign(TextAlign.Center).toAttrs()) {
                 Text(
                     "The job market is tough. Landing a job is even harder. " +
                             "We connect developers with HR professionals to close this gap."
