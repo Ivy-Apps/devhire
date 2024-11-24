@@ -6,7 +6,7 @@ import devhire.io.components.layouts.PageLayout
 import org.jetbrains.compose.web.dom.Text
 
 
-@Page("/dev-login")
+@Page(Routes.DevLogin)
 @Composable
 fun DevLoginPage() {
     PageLayout("Developer: Get a job") {

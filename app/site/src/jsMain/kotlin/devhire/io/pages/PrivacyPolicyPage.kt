@@ -5,7 +5,7 @@ import com.varabyte.kobweb.core.Page
 import devhire.io.components.layouts.PageLayout
 import org.jetbrains.compose.web.dom.Text
 
-@Page(routeOverride = "/privacy")
+@Page(Routes.PrivacyPolicy)
 @Composable
 fun PrivacyPolicyPage() {
     PageLayout("DevHire: Privacy policy") {

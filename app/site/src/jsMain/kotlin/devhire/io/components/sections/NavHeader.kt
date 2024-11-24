@@ -29,6 +29,7 @@ import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import devhire.io.components.widgets.IconButton
 import devhire.io.components.widgets.NavLink
+import devhire.io.pages.Routes
 import devhire.io.toSitePalette
 import org.jetbrains.compose.web.css.*
 
@@ -91,7 +92,7 @@ enum class SideMenuState {
 @Composable
 fun NavHeader() {
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        NavLink(path = "/", text = "DevHire")
+        NavLink(text = "DevHire", path = Routes.Home)
 
         Spacer()
 

@@ -12,6 +12,7 @@ import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.toModifier
 import devhire.io.components.widgets.NavLink
+import devhire.io.pages.Routes
 import devhire.io.toSitePalette
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
@@ -30,8 +31,8 @@ fun Footer(modifier: Modifier = Modifier) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            NavLink(text = "Terms of Use", path = "/terms")
-            NavLink(text = "Privacy Policy", path = "/privacy")
+            NavLink(text = "Terms of Use", path = Routes.TemsOfUse)
+            NavLink(text = "Privacy Policy", path = Routes.PrivacyPolicy)
             Div(Modifier.padding(top = 1.cssRem).toAttrs()) {
                 Text("Copyright © 2024 Ivy Apps")
             }

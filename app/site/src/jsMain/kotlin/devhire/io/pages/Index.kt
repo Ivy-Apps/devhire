@@ -21,7 +21,7 @@ import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.Text
 
 
-@Page
+@Page(Routes.Home)
 @Composable
 fun HomePage() {
     PageLayout("DevHire: Improve your hiring odds!") {
