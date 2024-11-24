@@ -5,14 +5,16 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.modifiers.minWidth
 import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.theme.colors.ColorSchemes
 import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.keywords.auto
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Text
+
+private val MinButtonWidth = 180.px
 
 @Composable
 fun SignUpComponent() {
@@ -40,7 +42,7 @@ fun DeveloperButton(
     ) {
         val ctx = rememberPageContext()
         Button(
-            modifier = Modifier.width(auto = auto),
+            modifier = Modifier.minWidth(MinButtonWidth),
             colorScheme = ColorSchemes.Blue,
             onClick = {
                 ctx.router.navigateTo("/dev-login")
@@ -62,7 +64,7 @@ fun HrButton(
     ) {
         val ctx = rememberPageContext()
         Button(
-            modifier = Modifier.width(auto = auto),
+            modifier = Modifier.minWidth(MinButtonWidth),
             colorScheme = ColorSchemes.Yellow,
             onClick = {
                 ctx.router.navigateTo("/hr-login")
