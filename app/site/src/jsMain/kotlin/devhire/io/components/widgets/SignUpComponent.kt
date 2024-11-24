@@ -32,10 +32,11 @@ fun SignUpComponent() {
         Tbody(
             Modifier
                 .fontSize(FontSize.Larger)
+                .fontWeight(FontWeight.SemiBold)
                 .padding(bottom = 1.cssRem)
                 .toAttrs()
         ) {
-            Text("Let's get the hiring done!")
+            Text("Count me in?")
         }
         Row(
             verticalAlignment = Alignment.CenterVertically

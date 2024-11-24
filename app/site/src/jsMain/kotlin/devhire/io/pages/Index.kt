@@ -16,6 +16,7 @@ import com.varabyte.kobweb.core.Page
 import devhire.io.components.layouts.PageLayout
 import devhire.io.components.widgets.SignUpComponent
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.Text
@@ -43,10 +44,9 @@ fun HomePage() {
                     .fontWeight(FontWeight.Normal)
                     .toAttrs()
             ) {
-                Text(
-                    "The job market is tough. Landing a job is even harder. " +
-                            "We connect developers with HR professionals to close this gap."
-                )
+                Text("The job market is tough. Landing a job is even harder.")
+                Br()
+                Text("We connect developers with HR professionals to close this gap.")
             }
             SignUpComponent()
         }
